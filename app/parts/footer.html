@@ -1,0 +1,108 @@
+
+<script
+  src="https://code.jquery.com/jquery-3.6.4.min.js"
+  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+  crossorigin="anonymous"></script>
+<script src="js/app.min.js"></script>
+<script src="js/inputmask.min.js"></script>
+<script src="js/just-validate.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://kvlsrg.github.io/jquery-custom-select/dist/js/jquery.custom-select.js?v=c7dbdaef2018c30ecd3def36676dd2d5cf3f7a22"></script>
+
+
+
+	<div id="popup" class="popup">
+		<div class="popup__body">
+			<div class="popup__content">
+				<a href="#header" class="popup__close close-popup">
+					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="19.5" transform="rotate(90 20 20)" stroke="#EAEAEA"/>
+						<path d="M27 13L13 27M13 13L27 27" stroke="#EAEAEA" stroke-linecap="round"/>
+					</svg>
+						
+				</a>
+				<div class="popup__title">Feedback</div>
+				<div class="popup__text">
+					<form action="mail.php" class="form" enctype="multipart/form-data" method="POST">
+						<input type="hidden" name="admin_email[]" value="movetonjkee@gmail.com">
+						<input type="hidden" name="form_subject" value="Тема письма">
+						<div class="form-inputs">
+							<label class="form-label">
+								<span>Your name</span>
+								<input type="text" name="name" placeholder="Placeholder">
+							</label>
+							<label class="form-label">
+								<span>Email address</span>
+								<input type="email" data-validate-field="email" name="email" placeholder="Placeholder">
+							</label>
+							<label class="form-label">
+								<span>Your phone</span>
+								<input type="tel" data-validate-field="tel" name="tel" placeholder="Placeholder">
+							</label>
+							<label class="form-label">
+								<span>Сhoose a trip</span>
+								<select name="" id="" placeholder="Сhoose">
+									<option value="Walking in Old Tallinn">Walking in Old Tallinn</option>
+									<option value="St. Isaac's Cathedral">St. Isaac's Cathedral</option>
+									<option value="The Bridge of Peace">The Bridge of Peace</option>
+									<option value="El Caminito del Rey">El Caminito del Rey</option>
+								</select>
+							</label>
+						</div>
+
+						<div class="form-area">
+							<label for="">
+								<span>Describe your question</span>
+								<textarea placeholder="Placeholder">
+
+								</textarea>
+							</label>
+						</div>
+
+						<div class="form-footer">
+							<div class="checkbox">
+								<input checked class="custom-checkbox" type="checkbox" id="success" name="success" value="Даю согласие на обработку">
+								<label for="success">Даю согласие на обработку</label>
+							  </div>
+							<button class="btn btn-form-check" type="submit">Send</button>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$('select').customSelect();
+	
+	$(document).ready(function () {
+    $('.card__favorite').click(function () {
+      if ($(this).hasClass('on')) {
+        // удаление
+        $(this).removeClass('on');
+      } else {
+        // добавление
+        $(this).addClass('on');
+      }
+    });
+  });
+
+  $('#success').change(function() {
+      let check = $(this).prop('checked');
+      if (!check) {
+            $('.btn-form-check').attr('disabled', 'disabled');
+
+      } else {
+            $('.btn-form-check').removeAttr('disabled', 'disabled');
+      }
+
+})
+</script>
+
+
+
+</body>
+</html>

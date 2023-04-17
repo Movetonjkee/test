@@ -1,0 +1,156 @@
+.main {
+	margin-top: 65px;
+	flex-wrap: wrap;
+	&__header {
+		.btn {
+			max-width: 354px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+	&__body {
+		display: flex;
+		margin-top: 65px;
+	}
+	&__text {
+		flex: 0 1 50%;
+		p {
+			margin-bottom: 24px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+.main__slider {
+	margin-top: 65px;
+	margin-bottom: 135px;
+}
+
+.gallery-slider {
+	overflow: visible;
+	.swiper-slide {
+		height: auto;
+		opacity: 1;
+		transition: opacity .3s ease;
+		&.swiper-slide-prev {
+			opacity: 0;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			max-height: 336px;
+			overflow: hidden;
+		}
+	}
+
+}
+
+
+
+
+
+
+.other-tours {
+	margin-bottom: 64px;
+	.title-block {
+		margin-bottom: 64px;
+	}
+}
+
+.card {
+	padding: 30px;
+	position: relative;
+	&:hover {
+		.card__favorite {
+			opacity: 1;
+		}
+	}
+}
+
+.card__title {
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 38px;
+	margin-top: 24px;
+}
+.card__body {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	color: rgba(35, 35, 35, 0.7);
+	margin-top: 16px;
+}
+.card__favorite {
+	position: absolute;
+	right: 46px;
+	top: 46px;
+	width: 40px;
+	height: 40px;
+	background-color: $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	opacity: 0;
+	transition: .3s ease;
+	&:active {
+		path {
+			fill: $accent;
+		}
+	}
+	&.on {
+		path {
+			fill: $accent;
+		}
+	}
+}
+
+@media(max-width: 992px) {
+	.main {
+		font-size: 14px;
+		line-height: 22px;
+		margin-top: 40px;
+	}
+	.main__header {
+		.title-block {
+			margin-bottom: 40px;
+		}
+	}
+	.main__body {
+		margin-top: 40px;
+	}
+	.main__text {
+		flex: 1 1 100%;
+	}
+	.card {
+		padding: 0;
+		
+	}
+	.card__title {
+		font-size: 20px;
+		line-height: 28px;
+	}
+	.card__body {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.cards-slider {
+		overflow: visible;
+
+	}
+	.gallery-slider .swiper-slide.swiper-slide-prev {
+		opacity: 1;
+	}
+	.other-tours {
+		margin-bottom: 128px;
+	}
+	.other-tours .title-block {
+		margin-bottom: 40px;
+	}
+}
